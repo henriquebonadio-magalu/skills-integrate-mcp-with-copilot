@@ -12,5 +12,21 @@ Remember, it's self-paced so feel free to take a break! ☕️
 
 ---
 
-&copy; 2025 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+&copy; 2025 GitHub • [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) • [MIT License](https://gh.io/mit)
 
+## Security: Hashing admin passwords (migration helper)
+
+This repository includes a helper to migrate plain-text admin passwords (from imported projects like the Sports Club example) into bcrypt hashes.
+
+- Script: `tools/migrate_admin_passwords.php` — run with PHP CLI.
+- Example login: `tools/secure_login_example.php` — demonstrates PDO + password_verify().
+
+Usage (example):
+
+```bash
+# export DB connection for the script
+export DB_HOST=127.0.0.1 DB_NAME=sports_club DB_USER=root DB_PASS=""
+php tools/migrate_admin_passwords.php
+```
+
+Make a DB backup before running the migration.
